@@ -5,72 +5,75 @@ const cats = ["Milo", "Otis", "Garfield"];
 
 // function destructivelyAppendCat
 function destructivelyAppendCat(name) {
-    done();
+    resetCats();
     cats.push(name);
     return cats;
 }
-console.log(destructivelyAppendCat("Ralph"));
+// console.log(destructivelyAppendCat("Ralph"));
 
 // function destructivelyPrependCat
 function destructivelyPrependCat(name) {
-    done();
+    resetCats();
     cats.unshift(name);
     return cats;
 }
-console.log(destructivelyPrependCat("Bob"));
+// console.log(destructivelyPrependCat("Bob"));
 
 // function destructivelyRemoveLastCat()
 function destructivelyRemoveLastCat() {
-    done();
+    resetCats();
     cats.pop();
     return cats;
 }
-console.log(destructivelyRemoveLastCat());
+// console.log(destructivelyRemoveLastCat());
 
 // function destructivelyRemoveFirstCat()
 function destructivelyRemoveFirstCat() {
-    done();
+    resetCats();
     cats.shift();
     return cats;
 }
-console.log(destructivelyRemoveFirstCat());
+// console.log(destructivelyRemoveFirstCat());
 
 // function appendCat
 function appendCat(name) {
-    done();
-    const newCats = [...cats.slice(0, 3), name];
+    resetCats();
+    let newCats = [...cats, name];
     return newCats;
 }
-console.log(appendCat("Broom"));
+// console.log(appendCat("Broom"));
 
 // function prependCat
 function prependCat(name) {
-    done();
-    const newCats = [name, ...cats.slice(0, 3)];
+    resetCats();
+    let newCats = [name, ...cats];
     return newCats;
 }
-console.log(prependCat("Arnold"));
+// console.log(prependCat("Arnold"));
 
 // function removeLastCat()
 function removeLastCat() {
-    done();
-    const newCats = [...cats.slice(0, 2)];
+    resetCats();
+    let newCats = [...cats];
+    newCats.splice(-1);
     return newCats;
 }
-console.log(removeLastCat());
+// console.log(removeLastCat());
 
 // function removeFirstCat()
 function removeFirstCat() {
-    done();
-    const newCats = [...cats.slice(1, 3)];
+    resetCats();
+    let newCats = [...cats];
+    newCats.splice(0,1);
     return newCats;
 }
+// console.log(removeFirstCat());
 
-function done() {
+function resetCats() {
     cats.length = 0;
     return cats.push("Milo", "Otis", "Garfield");
 }
-console.log(removeFirstCat());
+
 
 console.log(cats);
 
